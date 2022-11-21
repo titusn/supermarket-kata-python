@@ -33,4 +33,5 @@ class ShoppingCartWithTwoItemsTest(unittest.TestCase):
         self.cart.add("Apples")
 
     def test_cart_contains_2_items(self):
+        self.assertEqual(self.cart.item_count(), 2)
 
