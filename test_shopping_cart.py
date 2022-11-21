@@ -34,4 +34,10 @@ class ShoppingCartWithTwoItemsTest(unittest.TestCase):
 
     def test_cart_contains_2_items(self):
         self.assertEqual(self.cart.item_count(), 2)
+    def test_removing_last_item_results_in_only_first_item(self):
+        self.cart.remove("Apples")
+        self.assertEqual(self.cart.items(), ["Bananas"])
 
+    def test_removing_first_item_results_in_only_last_item(self):
+        self.cart.remove("Bananas")
+        self.assertEqual(self.cart.items(), ["Apples"])
